@@ -1,0 +1,36 @@
+.Qtemplate{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin-top: 100px;
+    margin-left:100px ;
+    margin-right:100px ;
+    height: 100%;
+}
+
+#a1,#a2,#a3,#a4{
+    margin-bottom: 10px;
+    width: 50%;
+    margin-left: 350px;
+}
+
+.correct-answer{
+    margin-top: 50px;
+    margin-left: 800px;
+    color: #018a3a;
+    font-size: medium;
+    font-weight: bold;
+}
+#next {
+
+    width: 20%;
+    margin-top: 50px;
+    margin-left: 900px;
+    margin-bottom: 30px;
+}
+h1{   
+      margin-left:60px ;
+      margin-right:60px ;
+       
+       word-wrap: break-word;
+}

@@ -1,0 +1,32 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-top: 100px;
+    align-items: center;
+    width: 30%;
+    margin-left: 500px;
+    background-color: #ffffff;
+    font-size: medium;
+    font-weight: bolder;
+    text-align: start;
+    color: #6a6b6b;
+}
+h1{
+    font-size: 40px;
+    color: #333232;
+    
+}
+.element{
+ width: 90%;
+ height: 40px;
+ 
+}
+#start{
+    background-color: #ffbb00;
+    font-size: medium;
+    font-weight: bold;
+    color: #333232;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
