@@ -6,13 +6,14 @@ import {useState} from 'react'
 function App() {
   
    const [showQcm,setshowQcm]=useState(false);
+   
    const [QuizParams,setQuizParams]=useState({});
   
   return (
     <div className="App">
-     {showQcm?<Question Setup={QuizParams} />:<QuizSetup   setSetup={setQuizParams} showQcm={showQcm} setshowQcm={setshowQcm}/>}  
+     {showQcm?<Question Setup={QuizParams} setshowQcm={setshowQcm}  />:<QuizSetup   setSetup={setQuizParams} showQcm={showQcm} setshowQcm={setshowQcm}/>}  
      
-
+     
     </div>
   );
 }
