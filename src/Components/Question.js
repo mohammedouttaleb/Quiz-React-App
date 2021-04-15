@@ -11,7 +11,7 @@ function Question ({Setup,setshowQcm}){
 
     const QuestionsList=[
         {
-            body:"Who is the balon d'or winner for 2019?",
+            body:"Who is the balon d'or winner for 2018?",
             type:"sports",
             difficulty:"easy",
             responses:["Lionel Messi","Ronaldo","Neymar","Braithwaite"],
@@ -19,8 +19,40 @@ function Question ({Setup,setshowQcm}){
 
         },
         {
-            body:"Who Oscar winner for 2019?",
+            body:"Who is the Premier League’s all-time top scorer?",
             type:"sports",
+            difficulty:"Hard",
+            responses:["Sergio Kun Aguero","Eden Hazard","Alan Shearer","Rooney"],
+            answer:"Alan Shearer"
+
+        },
+        {
+            body:"Wayne Rooney scored his Premier League first goal against which team?",
+            type:"sports",
+            difficulty:"Hard",
+            responses:["Arsenal","Chelsea","Man City","Totenham"],
+            answer:"Arsenal"
+
+        },
+        {
+            body:"Where were the Olympics held in 1980?",
+            type:"sports",
+            difficulty:"Hard",
+            responses:["Russia","South Africa","Japan","China"],
+            answer:"Russia"
+
+        },
+        {
+            body:"Who holds the women's record for the 100m sprint?",
+            type:"sports",
+            difficulty:"Hard",
+            responses:["Florence Griffith-Joyner","Stevie Marget","Magie Oliver","Elizabet Kean"],
+            answer:"Florence Griffith-Joyner"
+
+        },
+        {
+            body:"Who Oscar winner for 2019?",
+            type:"art",
             difficulty:"easy",
             responses:["R.louali","FERKOUS","Naciri","Hassan Elfadd"],
             answer:"R.louali"
@@ -28,7 +60,7 @@ function Question ({Setup,setshowQcm}){
         },
         {
             body:"Who is the best rapper for 2020 in Morroco?",
-            type:"sports",
+            type:"art",
             difficulty:"easy",
             responses:["SmalllX","El Grande ToTo","Dizzy Dros","Inkonnu"],
             answer:"SmalllX"
@@ -49,6 +81,9 @@ function Question ({Setup,setshowQcm}){
      });
 
     console.log(finalList);
+
+    //checking the availability of the questions  so based on that bolean we render either questions or a error message
+    let questionsAvailability= finalList.length>0 ? true:false;
 
     //handler du nextquestion button 
     function ClickHandler(){
@@ -87,18 +122,21 @@ function Question ({Setup,setshowQcm}){
 
     }
 
-    let array=finalList[index].responses;
+    //let array=finalList[index].responses;
     //array2 is the list of choices i render it using map method
-    let array2=array.map(response => <button type="button"   className="btn btn-outline-primary a1" data-toggle="modal" data-target="#exampleModal" value={response} onClick={ e => AnswerHandler(e.target)} >{response}</button> )
+    //let array2=array.map((response,index) => <button type="button" key={index}   className="btn btn-outline-primary a1" data-toggle="modal" data-target="#exampleModal" value={response} onClick={ e => AnswerHandler(e.target)} >{response}</button> )
     return(
         <div className="Qtemplate">
+          { questionsAvailability ?
+            <div className="Qtemplate">
             <label className="correct-answer">Correct Answers{score}/{questionnbr}</label>
             <h1>{finalList[index].body}</h1><br/><br/>
-            {array2}
+            {finalList[index].responses.map((response,index) => <button type="button" key={index}   className="btn btn-outline-primary a1" data-toggle="modal" data-target="#exampleModal" value={response} onClick={ e => AnswerHandler(e.target)} >{response}</button> )}
             <button type="button" id="next" className="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" onClick={ClickHandler}>Next Question</button>
              { gameOver && <Popup score={score} questionnbr={questionnbr} setshowQcm={setshowQcm} setgameOver={setgameOver} />}
-            
-            
+           </div>
+            :<div className="Qtemplate" ><h1 className="error" >Sorry There is no available Questions right Now</h1><br/><br/><br/></div>
+            } 
         </div>
     )
 }
