@@ -12,8 +12,6 @@ function App() {
   return (
     <div className="App">
      {showQcm?<Question Setup={QuizParams} setshowQcm={setshowQcm}  />:<QuizSetup   setSetup={setQuizParams} showQcm={showQcm} setshowQcm={setshowQcm}/>}  
-     
-     
     </div>
   );
 }

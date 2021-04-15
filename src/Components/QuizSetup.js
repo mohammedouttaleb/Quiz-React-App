@@ -6,35 +6,23 @@ function QuizSetup({showQcm,setshowQcm,setSetup}) {
 
    
 
-    const [Q_nbr,setQnbr]=useState(0)
+    const [Q_nbr,setQnbr]=useState(1)
     const [Category,setCategory]=useState('sports')
     const [Difficulty,setDifficulty]=useState('easy')
 
 
     function ClickHanlder(){
-
-        if(Q_nbr===0  ){
-            alert('Invalid Inputs!!!Please Enter a valid parametres');
-            return;
-        }
-        
-            /*Inputs Of quizSetup are good */
-            //console.log(Q_nbr);
-            //console.log(Category);
-            //console.log(Difficulty);
+       
+        /** showing qcm form and passing user inputs to question component */
             setshowQcm(!showQcm);
             setSetup({Category,Difficulty,Q_nbr});
-            
-        
-
-    
     }
 
     return(
         <div  className="form" >
              <h1 className="element">Setup Quiz</h1><br/>
              <label className="element">Number Of questions</label><br/>
-             <input className="element" type={"Number"} min={0} placeholder="Questions Number" value={Q_nbr} onChange={ (e)=> setQnbr(e.target.value)} ></input><br/>
+             <input className="element" type={"Number"} min={1} placeholder="Questions Number" value={Q_nbr} onChange={ (e)=> setQnbr(e.target.value)} ></input><br/>
              <label className="element">Category</label><br/>
              <select className="element" value={Category}  onChange={ (e)=> setCategory(e.target.value)}>
                  <option>Sports</option>

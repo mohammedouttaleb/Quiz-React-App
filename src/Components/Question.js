@@ -94,7 +94,6 @@ function Question ({Setup,setshowQcm}){
         }
         else{
             /** display game over popup */
-            alert("Game Over!!!");
             setgameOver(true);
         }
         setquestionnbr(questionnbr+1); 
@@ -105,26 +104,20 @@ function Question ({Setup,setshowQcm}){
       
         if(target.value.localeCompare(finalList[index].answer)===0)  {
             setscore(score+1);
-            
-    
            } 
-            //else  alert("wrong answer!!!");
-
+            
         if(index<=finalList.length-2)  {
          /* the game is not over*/ 
         setindex(index+1);
     }
     else{
         /* the game is over so we will display congratualation popup with the score*/
-        //alert("Game Over!!!");
         setgameOver(true);
     }
 
     }
 
-    //let array=finalList[index].responses;
-    //array2 is the list of choices i render it using map method
-    //let array2=array.map((response,index) => <button type="button" key={index}   className="btn btn-outline-primary a1" data-toggle="modal" data-target="#exampleModal" value={response} onClick={ e => AnswerHandler(e.target)} >{response}</button> )
+    
     return(
         <div >
           { questionsAvailability ?
