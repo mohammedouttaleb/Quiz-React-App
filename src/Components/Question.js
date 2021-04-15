@@ -41,7 +41,9 @@ function Question ({Setup,setshowQcm}){
      /*filltered list based on user parameters */ 
      QuestionsList.forEach(question => {
         if(   question.type.localeCompare(Setup.Category)===0 &&question.difficulty.localeCompare(Setup.Difficulty)===0 ){
-            finalList.push(question);
+                
+             if(finalList.length<Setup.Q_nbr) finalList.push(question);
+             else return;
         }
 
      });
