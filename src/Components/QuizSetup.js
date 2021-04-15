@@ -18,10 +18,10 @@ function QuizSetup({showQcm,setshowQcm,setSetup}) {
             return;
         }
         
-            alert("welcome to our quiz lets goo!!!!!!!");
-            console.log(Q_nbr);
-            console.log(Category);
-            console.log(Difficulty);
+            /*Inputs Of quizSetup are good */
+            //console.log(Q_nbr);
+            //console.log(Category);
+            //console.log(Difficulty);
             setshowQcm(!showQcm);
             setSetup({Category,Difficulty,Q_nbr});
             
