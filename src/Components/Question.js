@@ -126,7 +126,7 @@ function Question ({Setup,setshowQcm}){
     //array2 is the list of choices i render it using map method
     //let array2=array.map((response,index) => <button type="button" key={index}   className="btn btn-outline-primary a1" data-toggle="modal" data-target="#exampleModal" value={response} onClick={ e => AnswerHandler(e.target)} >{response}</button> )
     return(
-        <div className="Qtemplate">
+        <div >
           { questionsAvailability ?
             <div className="Qtemplate">
             <label className="correct-answer">Correct Answers{score}/{questionnbr}</label>
@@ -135,7 +135,7 @@ function Question ({Setup,setshowQcm}){
             <button type="button" id="next" className="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" onClick={ClickHandler}>Next Question</button>
              { gameOver && <Popup score={score} questionnbr={questionnbr} setshowQcm={setshowQcm} setgameOver={setgameOver} />}
            </div>
-            :<div className="Qtemplate" ><h1 className="error" >Sorry There is no available Questions right Now</h1><br/><br/><br/></div>
+            :<div className="Qtemplate" ><br/><br/><br/><h1 className="error" >Sorry There is no available Questions right Now ;(</h1><br/><br/><br/></div>
             } 
         </div>
     )
