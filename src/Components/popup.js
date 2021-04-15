@@ -20,7 +20,7 @@ function popup ({score,questionnbr,setshowQcm,setgameOver}){
             <div className="modal-content">
               <div className="modal-body">
               <h1>Congrats!</h1><br/>
-              <h4>You answered { Math.trunc(score/questionnbr *100)} % of questions correctly</h4><br/>
+              <h4>You answered { Math.trunc(score/questionnbr *100)} % of questions correctly</h4><br/> 
               <button type="button"  className="btn btn-warning" data-dismiss="modal"  onClick={RestartGame}  >Play Again</button> 
               </div>
             </div>
