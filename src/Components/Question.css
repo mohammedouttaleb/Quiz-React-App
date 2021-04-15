@@ -36,4 +36,9 @@ h1{
 }
 .error{
     color: red;
+    margin-top:1%;
+}
+.return{
+    margin: auto;
+    margin-bottom: 1%;
 }

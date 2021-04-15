@@ -116,6 +116,11 @@ function Question ({Setup,setshowQcm}){
     }
 
     }
+    /*i duplicate the function just cause of 3egez i could pass it as a parametre to this component from popup component*/ 
+    function RestartGame(){
+        setshowQcm(false);
+        setgameOver(false);
+    }
 
     
     return(
@@ -128,7 +133,11 @@ function Question ({Setup,setshowQcm}){
             <button type="button" id="next" className="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" onClick={ClickHandler}>Next Question</button>
              { gameOver && <Popup score={score} questionnbr={questionnbr} setshowQcm={setshowQcm} setgameOver={setgameOver} />}
            </div>
-            :<div className="Qtemplate" ><br/><br/><br/><h1 className="error" >Sorry There is no available Questions right Now ;(</h1><br/><br/><br/></div>
+            :<div className="Qtemplate" >
+                <h1 className="error" >Sorry There is no available Questions right Now ;(</h1>
+                <br/>
+                <button type="button"  className="btn btn-warning return"   onClick={RestartGame}  >Return To Main Menu</button>
+                </div>
             } 
         </div>
     )
